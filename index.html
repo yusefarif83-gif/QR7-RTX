@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR7 - Hacking Menu</title>
+    <style>
+        /* إعدادات الخلفية العامة */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0d1117; 
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* حاوية الأشكال المتحركة في الخلفية */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            animation: move-random 15s linear infinite;
+        }
+
+        .circle { border-radius: 50%; }
+        .square { border-radius: 10%; }
+
+        @keyframes move-random {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.5; }
+            80% { opacity: 0.5; }
+            100% { transform: translate(100vw, 100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 50px 0;
+            z-index: 1;
+        }
+
+        /* أنيميشن التحرك فوق وتحت (Floating) */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* كارد QR7 العلوي مع حركة */
+        .qr7-card {
+            background-color: rgba(26, 35, 51, 0.8);
+            border: 2px solid #3b82f6;
+            border-radius: 30px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+            margin-bottom: 60px;
+            animation: float 4s ease-in-out infinite; /* حركة فوق وتحت */
+        }
+
+        .qr7-text {
+            font-size: 65px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff4500, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; 
+            width: 90%;
+            max-width: 380px;
+        }
+
+        .custom-btn {
+            background-color: rgba(33, 37, 41, 0.9);
+            color: white;
+            padding: 20px;
+            font-size: 19px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 15px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* زر ديسكورد المنفصل والمتحرك */
+        .discord-btn {
+            margin-top: 50px;
+            background-color: #5865F2; /* لون ديسكورد الرسمي */
+            color: white;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+            border: none;
+            animation: float 4s ease-in-out infinite; /* نفس حركة QR7 */
+            transition: 0.3s;
+        }
+
+        .discord-btn:hover {
+            background-color: #4752c4;
+            box-shadow: 0 0 30px rgba(88, 101, 242, 0.8);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-animation">
+        <div class="shape circle" style="width: 80px; height: 80px; top: 10%; left: -10%; animation-duration: 20s;"></div>
+        <div class="shape square" style="width: 50px; height: 50px; top: 40%; left: -5%; animation-duration: 25s; animation-delay: 2s;"></div>
+        <div class="shape circle" style="width: 100px; height: 100px; top: 70%; left: -15%; animation-duration: 18s; animation-delay: 5s;"></div>
+        <div class="shape square" style="width: 40px; height: 40px; top: 20%; left: -10%; animation-duration: 22s; animation-delay: 8s;"></div>
+        <div class="shape circle" style="width: 60px; height: 60px; top: 85%; left: -5%; animation-duration: 30s;"></div>
+    </div>
+
+    <div class="page-wrapper">
+        
+        <a href="https://discord.gg/Wzq75643y" class="qr7-card">
+            <span class="qr7-text">QR7</span>
+        </a>
+
+        <div class="btn-container">
+            <a href="https://www.mediafire.com/file/zhvrz2elarw0y8y/Krnl+VN+new.apk/file" class="custom-btn">
+                هاك كرنل فيتنام
+            </a>
+
+            <a href="https://www.mediafire.com/file/yepx684huht8ecm/Delta-2.709.873.apk/file" class="custom-btn">
+                هاك دلتا العادي
+            </a>
+
+            <a href="https://www.mediafire.com/file/h59zurbkomftsbr/Roblox+-+VNG+Arceus+X+NEO+2.0.1+(FIXED+2.0).apk/file" class="custom-btn">
+                هاك ارسيوس فيتنام
+            </a>
+        </div>
+
+        <a href="https://discord.gg/uatgZ8Hvu" class="discord-btn">
+            ديسكورد 🌐
+        </a>
+
+    </div>
+
+</body>اول موقع لي
+</html>❤
+<h1>وداعا 
+
